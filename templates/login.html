@@ -1,0 +1,33 @@
+{%extends "index.html"%}
+{%block contents%}
+<h1>login</h1>
+id : <input id = "user_id"></input>
+pw : <input id = "user_pw" type = "password"></input>
+<button id = "sign-in" onclick="login()">sign-in</button>
+<button >sign-up</button>
+<script>
+    const login =  () => {
+        let id = document.getElementById("user_id").value;
+        let pw = document.getElementById("user_pw").value;
+        let data = {
+            id : id,
+            pw : pw
+        }
+        fetch("/login_user",{
+            method : "POST",
+            headers : {
+                "Content-Type" : "application/json"
+            },
+            body : JSON.stringify(data)
+        }).then((resp)=>{return response.json()
+        }).then((data)=>{
+            if(data.result == "success"){
+                alert("login success");
+                location.href = "/";
+            }else{
+                alert("login fail");
+            }
+        })
+    }
+</script>
+{%endblock%}
