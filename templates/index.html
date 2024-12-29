@@ -1,9 +1,19 @@
-<html>
+<html style = "margin : 0px; padding : 0px;">
     <head>
         <title>powered by Tboard</title>
+        <link rel="stylesheet" href="{{ url_for('static',path='/css/index.css') }}" />
     </head>
-    <body>
-        <h1>Welcome to Tboard</h1>
-        <p>powered by Tboard</p>
+    <body style = "margin : 0px; padding : 0px;">
+        <div class="header">
+            <nav class="header_nav">
+                <h1 style = "margin :1%; padding : 0%; width: 15%;">Header</h1>
+                <ul class="header_menu">
+                    <li><a href = "#">Home</a></li>
+                </ul>
+                <div>
+                    <button class = "button">login</button>
+                </div>
+            </nav>
+        </div>
     </body>
 </html>
